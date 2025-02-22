@@ -1,0 +1,526 @@
+{% load static %}
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Tourist - Travel Agency HTML Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+    
+          <!-- Favicon -->
+    <!-- <link href="img/favicon.ico" rel="icon"> -->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib\animate\animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib\owlcarousel\assets\owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib\tempusdominus\css\tempusdominus-bootstrap-4.min.css' %} " rel="stylesheet" />
+ 
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+ 
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css\style.css'%}" rel="stylesheet">
+        <!-- bootstrap-5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- navbar -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+    <script>
+    $(function () {
+        $("#header").load('header.html');
+    });
+
+
+    </script>
+    <script>
+        $(function () {
+            $("#footer").load('footer.html');
+        });
+    
+    
+        </script>
+    </head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    /* display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D');
+    background-size: cover; /* Ensures the image covers the screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+/* Optional: Center the page content */
+.content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.form-container {
+    width: 400px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.form-toggle button {
+    padding: 10px 20px;
+    border: none;
+    background: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-toggle button.active {
+    background: #45a049;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-content.hidden {
+    display: none;
+}
+
+.form-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-content input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-content button {
+    padding: 10px;
+    border: none;
+    background: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-content p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-content a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+/* Sticky navbar with light black transparent tint */
+.navbar {
+    position: relative; /* Makes the navbar fixed to the top */
+    font-family: 'Nunito', sans-serif;
+    margin-right: 25px;
+    padding: 35px 0;
+    color: #FFFFFF !important;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    transition: .5s;
+    top: 0;
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.7);/* Light black with 70% opacity */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+
+    </style>
+<body background="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div id="header">
+        
+    </div>
+    <!-- Spinner End -->
+     <!-- Topbar Start -->
+     <!-- <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@example.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <!-- <div class="container-fluid position-fixed p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Tourist</h1> -->
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            <!-- </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link ">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <a href="package.html" class="nav-item nav-link">Packages</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="destination.html" class="dropdown-item">Destination</a>
+                            <a href="booking.html" class="dropdown-item">Booking</a>
+                            <a href="team.html" class="dropdown-item">Travel Guides</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Page</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="login.html" class="btn btn-primary active rounded-pill py-2 px-4">Register</a>
+            </div>
+        </nav> -->
+
+        
+    </div>
+    <!-- Navbar & Hero End -->
+     
+     <div class="d-flex w-100 justify-content-center align-items-center" style="height: 100vh;">
+        <div class="form-container">
+            <div class="form-toggle">
+                <button id="loginBtn">Login</button>
+                <button id="registerBtn">Register</button>
+            </div>
+            <div class="form">
+                <!-- Login Form -->
+                <form id="loginForm" class="form-content">
+                    <h2>Login</h2>
+                    <input type="email" placeholder="Email" >
+                    <input type="password" placeholder="Password" >
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+                </form>
+    
+                <!-- Register Form -->
+               <!-- Register Form -->
+<form id="registerForm" class="form-content hidden">
+    <h2>Register</h2>
+    <input type="text" placeholder="Full Name" id="username" >
+    <p class="text-danger" id="error">Please Enter Username</p>
+    <input type="email" placeholder="Email" id="email">
+    <p class="text-danger" id="errorem">Please Enter Email</p>
+    <input type="text" placeholder="Contact Number" id="phnum">
+    <p class="text-danger" id="errornum">Please Enter phone Number</p>
+    <input type="password" placeholder="Password" id="pass">
+    <p class="text-danger" id="errorpass">Please Enter password</p>
+    <input type="password" placeholder="Confirm Password" id="cnfrm">
+    <p class="text-danger" id="errorcn">Please confirm password</p>
+    <button type="submit">Register</button>
+    <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+</form>
+
+            </div>
+        </div>
+     </div>
+    
+     <div id="footer">
+        
+     </div>
+      <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script>
+       $(document).ready(function () {
+    // Hide error message initially
+    $("#error").hide();
+
+    // Attach keyup event to the username field
+    $("#username").keyup(function () {
+        validateUsername();
+    });
+
+    function validateUsername() {
+        // Get the value of the username field
+        let username = $("#username").val();
+
+        // Check if the username is empty
+        if (!username) {
+            $("#error").show();
+            $("#error").html("Please enter a username.");
+            return false;
+        } else {
+            // Define the pattern for validation (only letters)
+            let pattern = /^[A-Za-z]+$/;
+
+            // Check if the username matches the pattern
+            let isNameValid = pattern.test(username);
+
+            if (!isNameValid) {
+                $("#error").show();
+                $("#error").html("Please enter a valid name.");
+                return fasle;
+            } else {
+                // Hide the error message if validation passes
+                $("#error").hide();
+            }
+        }
+    }
+});
+
+$(document).ready(function () {
+    // Hide error message initially
+    $("#errorem").hide();
+
+    // Attach keyup event to the username field
+    $("#email").keyup(function () {
+        validatemail();
+    });
+
+    function validatemail() {
+        // Get the value of the username field
+        let email = $("#email").val();
+
+        // Check if the username is empty
+        if (!email) {
+            $("#errorem").show();
+            $("#errorem").html("Please enter a email.");
+            return false;
+        } else {
+            // Define the pattern for validation (only letters)
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Check if the username matches the pattern
+            let isemailValid = pattern.test(email);
+
+            if (!isemailValid) {
+                $("#errorem").show();
+                $("#errorem").html("Please enter a valid email.");
+                return fasle;
+            } else {
+                // Hide the error message if validation passes
+                $("#errorem").hide();
+            }
+        }
+    }
+});
+$(document).ready(function () {
+    // Hide error message initially
+    $("#errornum").hide();
+
+    // Attach keyup event to the username field
+    $("#phnum").keyup(function () {
+        validateNum();
+    });
+
+    function validateNum() {
+        // Get the value of the username field
+        let username = $("#phnum").val();
+
+        // Check if the username is empty
+        if (!phnum) {
+            $("#errornum").show();
+            $("#errornum").html("Please enter a number.");
+            return false;
+        } else {
+            // Define the pattern for validation (only letters)
+            let pattern = /^\d{10}$/;
+
+            // Check if the username matches the pattern
+            let isnumValid = pattern.test(phnum);
+
+            if (!isnumValid) {
+                $("#errornum").show();
+                $("#errornum").html("Please enter a valid number.");
+                return fasle;
+            } else {
+                // Hide the error message if validation passes
+                $("#errornum").hide();
+            }
+        }
+    }
+}); 
+$(document).ready(function () {
+    // Hide error message initially
+    $("#errorpass").hide();
+
+    // Attach keyup event to the username field
+    $("#pass").keyup(function () {
+        validatepass();
+    });
+
+    function validatepass() {
+        // Get the value of the username field
+        let pass = $("#pass").val();
+
+        // Check if the username is empty
+        if (!pass) {
+            $("#errorpass").show();
+            $("#errorpass").html("Please enter a Password.");
+            return false;
+        } else {
+            // Define the pattern for validation (only letters)
+            let pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            // Check if the username matches the pattern
+            let ispassValid = pattern.test(username);
+
+            if (!isNameValid) {
+                $("#errorpass").show();
+                $("#errorpass").html("Please enter a valid Password.");
+                return fasle;
+            } else {
+                // Hide the error message if validation passes
+                $("#errorpass").hide();
+            }
+        }
+    }
+}); 
+$(document).ready(function () {
+    // Hide error message initially
+    $("#errorcn").hide();
+
+    // Attach keyup event to the username field
+    $("#cnfrm").keyup(function () {
+        validatecnfrm();
+    });
+
+    function validatecnfrm() {
+        // Get the value of the username field
+        let cnfrm = $("#cnfrm").val();
+
+        // Check if the username is empty
+        if (!username) {
+            $("#errorcn").show();
+            $("#errorcn").html("Please enter a password.");
+            return false;
+        } else {
+            // Define the pattern for validation (only letters)
+            let pattern = /^[A-Za-z]+$/;
+
+            // Check if the username matches the pattern
+            let iscnfrmValid = pattern.test(username);
+
+            if (!iscnfrmValid) {
+                $("#errorcn").show();
+                $("#errorcn").html("Please enter a valid confirm.");
+                return fasle;
+            } else {
+                // Hide the error message if validation passes
+                $("#errorcn").hide();
+            }
+        }
+    }
+});
+
+
+    </script>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+    
+
+    <script>const loginBtn = document.getElementById("loginBtn");
+        const registerBtn = document.getElementById("registerBtn");
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
+        const switchToRegister = document.getElementById("switchToRegister");
+        const switchToLogin = document.getElementById("switchToLogin");
+        
+        loginBtn.addEventListener("click", () => {
+            loginForm.classList.remove("hidden");
+            registerForm.classList.add("hidden");
+        });
+        
+        registerBtn.addEventListener("click", () => {
+            registerForm.classList.remove("hidden");
+            loginForm.classList.add("hidden");
+        });
+        
+        switchToRegister.addEventListener("click", (e) => {
+            e.preventDefault();
+            registerForm.classList.remove("hidden");
+            loginForm.classList.add("hidden");
+        });
+        
+        switchToLogin.addEventListener("click", (e) => {
+            e.preventDefault();
+            loginForm.classList.remove("hidden");
+            registerForm.classList.add("hidden");
+        });
+        </script>
+</body>
+</html>
+{% include 'footer.html'%}
+

@@ -42,7 +42,7 @@
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="userdash.html"><i class="fas fa-user fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="{% url 'userdash' %}"><i class="fas fa-user fw-normal"></i></a>
 
                 </div>
             </div>
@@ -62,11 +62,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="{% url 'index.html" class="nav-item nav-link ">Home</a>
-                    <a href="fyp.html" class="nav-item nav-link">for you</a>
-                    <a href="{%url 'about' % }" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="recomendations.html" class="nav-item nav-link">Recomendations</a>
+                    <a href="{% url 'index' %}" class="nav-item nav-link ">Home</a>
+                    <a href="{% url 'fyp' %}" class="nav-item nav-link">for you</a>
+                    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                    <a href="{% url 'service' %}" class="nav-item nav-link">Services</a>
+                    <a href="{% url 'recomendations' %}" class="nav-item nav-link">Recomendations</a>
                     <!-- <a href="package.html" class="nav-item nav-link">Packages</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -78,9 +78,9 @@
                            
                         </div>
                     </div> -->
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="login.html" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+                <a href="{% url 'login' %}" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
             </div>
         </nav>
     </div>
